@@ -21,7 +21,7 @@
 	This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 	
-	v1.0
+	v1.0.1
 .LINK
 	https://github.com/snowmountainer/AppLocker
 #>
@@ -37,8 +37,6 @@
 	Process
 	{
 		# Clear all local rule if true
-		$null = Get-AppLockerPolicy -Local -ErrorAction SilentlyContinue
-
 		if($ClearLocalRules){
 			$null = Get-AppLockerPolicy -Local -ErrorAction SilentlyContinue
 			[Microsoft.Security.ApplicationId.PolicyManagement.PolicyModel.AppLockerPolicy]::FromXml(
