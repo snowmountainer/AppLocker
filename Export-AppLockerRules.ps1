@@ -33,7 +33,7 @@
 	This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 	
-	v1.0
+	v1.0.1
 .LINK
 	https://github.com/snowmountainer/AppLocker
 #>
@@ -83,6 +83,10 @@
 			"All" {
 				Write-Verbose "Exporting ALL rules"
 			}
+		}
+		if(!(Test-Path -Path "$(Split-Path -Path $OutPath)" -PathType Container)){
+			New-Item -Path "$(Split-Path -Path $OutPath)" -ItemType Directory -Force | Out-Null
+			Write-Verbose -Message "Directory '$(Split-Path -Path $OutPath)' created"
 		}
 		$xml.Save("$OutPath")
 	}
