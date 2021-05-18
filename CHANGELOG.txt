@@ -1,0 +1,5 @@
+**Version 1.0.1 [??/05/2021]**
+-Update Export-AppLockerRules.ps1
+  -If the path for the export does not exist, it will now be created.
+-Update Remove-AppLockerHashRulesLocal.ps1
+  -Removed duplicate definition.
